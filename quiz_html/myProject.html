@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different rosas</title>
+</head>
+<body>
+  <h2>Слайдер роз</h2>
+  <div class="slider">
+    <div class="slider_image">
+      <img src="1.jpg" width="200px" height="150px" id="sliderImg">
+    </div>
+    <div class="slider_rose">
+   <button class="slider_item active">1</button>
+   <button class="slider_item">2</button>
+   <button class="slider_item">3</button>
+   <button class="slider_item">4</button>
+    </div>
+  </div>
+  <script>
+    let btns = document.querySelectorAll('.slider_item')
+    
+    for (let btn of btns) {
+      btn.onclick = function() {
+        // Убираем активный класс у всех кнопок
+        btns.forEach(item => item.classList.remove('active'))
+        
+        // Добавляем активный класс текущей кнопке
+        this.classList.add('active')
+        
+        // Меняем изображение
+        document.getElementById('sliderImg').src = `${this.innerHTML}.jpg`
+        
+        console.log(this.innerHTML)
+      }
+    }
+  </script>
+</body>
+</html>

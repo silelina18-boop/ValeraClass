@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz1.css">
+    <title>Литературная викторина</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Вопрос 1 -->
+        <p class="first font-effect-outline" :style="{ color: questionColors[0] }">
+            1. В каком произведении Федора Михайловича Достоевского главными героями являются Макар Алексеевич Девушкин и Варвара Алексеевна Доброселова
+        </p>
+        <div class="quiz">
+            <label v-for="(option, index) in questions[0].options" :key="index" class="quiz_item">
+                <img :title="option.description" :src="option.image" :alt="option.title">
+                <span class="quiz_title">{{ option.title }}</span>
+                <input type="radio" :name="'book1'" :value="option.value" v-model="questions[0].selected">
+            </label>
+        </div>
+        <button @click="checkAnswer(0)">Проверить ответ</button>
+        <div v-if="questions[0].result" :class="['result-message', questions[0].result === 'correct' ? 'correct' : 'incorrect']">
+            {{ questions[0].result === 'correct' ? '✅ Правильно!' : '❌ Неправильно' }}
+        </div>
+
+        <!-- Вопрос 2 -->
+        <p class="first font-effect-outline" :style="{ color: questionColors[1] }">
+            2. В каком произведении Льва Николаевича Толстого главным героем является пехотный офицер, подпоручик Михаил Козельцов
+        </p>
+        <div class="quiz">
+            <label v-for="(option, index) in questions[1].options" :key="index" class="quiz_item">
+                <img :title="option.description" :src="option.image" :alt="option.title">
+                <span class="quiz_title">{{ option.title }}</span>
+                <input type="radio" :name="'book2'" :value="option.value" v-model="questions[1].selected">
+            </label>
+        </div>
+        <button @click="checkAnswer(1)">Проверить ответ</button>
+        <div v-if="questions[1].result" :class="['result-message', questions[1].result === 'correct' ? 'correct' : 'incorrect']">
+            {{ questions[1].result === 'correct' ? '✅ Правильно!' : '❌ Неправильно' }}
+        </div>
+
+        <!-- Вопрос 3 -->
+        <p class="first font-effect-outline" :style="{ color: questionColors[2] }">
+            3. В каком произведении Александра Ивановича Куприна главным героем является Мартын Лодыжкин
+        </p>
+        <div class="quiz">
+            <label v-for="(option, index) in questions[2].options" :key="index" class="quiz_item">
+                <img :title="option.description" :src="option.image" :alt="option.title">
+                <span class="quiz_title">{{ option.title }}</span>
+                <input type="radio" :name="'book3'" :value="option.value" v-model="questions[2].selected">
+            </label>
+        </div>
+        <button @click="checkAnswer(2)">Проверить ответ</button>
+        <div v-if="questions[2].result" :class="['result-message', questions[2].result === 'correct' ? 'correct' : 'incorrect']">
+            {{ questions[2].result === 'correct' ? '✅ Правильно!' : '❌ Неправильно' }}
+        </div>
+    </div>
+    <script src="vue.global.js"></script>
+    <script src="quiz1.js"></script>
+</body>
+</html>

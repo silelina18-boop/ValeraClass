@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosas</title>
+</head>
+<body>
+  <div class="slider">
+    <div class="slider_image">
+      <img src="1.jpg" width="250px" height="150px" class="sliderImg">
+      <!-- <img :src="`${currentImage}.jpg`" width="200px" height="150px" :alt="`Rose ${currentImage}`"> -->
+
+    </div>
+    <div class="slider_roses">
+      <button class="slider_item active">1</button>
+      <button class="slider_item">5</button>
+      <button class="slider_item">6</button>
+      <button class="slider_item">4</button>
+
+
+      <!-- <button 
+      v-for="number in 4" 
+      :key="number"
+      class="slider_item" 
+      :class="{ active: currentImage === number }"
+      @click="changeImage(number)"
+    >
+      {{ number }}
+    </button> -->
+
+    </div>
+  </div>
+
+  <div class="secondSider">
+    <div class="2slider_image">
+      <img :src="`${currentImage}`jpg" width="200px" height="150px" class="sliderIm">
+    </div>
+    <div class="slider_books">
+      <button 
+      v-for="number in 4"
+      :key="number"
+      class="slider_book"
+      :class="{ active: currentImage === number}"
+      @click="changeImage(number)"
+      >
+    </button>
+    </div>
+  </div>
+
+  <script>
+    let btns = document.querySelectorAll('.slider_item')
+    for(let btn of btns){
+      btn.onclick = function(){
+        document.querySelector('.slider_roses .active').classList.remove('active')
+        this.classList.add('active')
+        document.querySelector('.slider_image img').setAttribute('src', `${this.innerHTML}.jpg`)
+      }
+    }
+  </script>
+</body>
+</html>
