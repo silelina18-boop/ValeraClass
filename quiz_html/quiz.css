@@ -5,11 +5,11 @@ body{
   
   /* Градиент с несколькими цветами */
   background: linear-gradient(135deg, 
-    #d5ddff 0%, 
-    #dbc1f5 25%, 
-    #eeb4f5 50%, 
-    #f7bec5 75%, 
-    #fac6ea 100%);
+    #d6dcfa 0%, 
+    #efe3fa 25%, 
+    #fae9fc 50%, 
+    #fae1e4 75%, 
+    #f5e5f0 100%);
 }
 .quiz {
   display: flex;
@@ -97,4 +97,44 @@ span{
   font-style: italic;
   font-weight: bold;
 }
+
+.attempts-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.attempts-info {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+#showResults {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: rgb(49, 83, 235);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#showResults:disabled {
+  background-color: #ddf7cc;
+  cursor: not-allowed;
+}
+
+
+.qustion_title{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgb(243, 247, 198);
+  color: rgb(1, 30, 161);
+}
+
+.quiz_title_date{
+  
+}
+    
 
