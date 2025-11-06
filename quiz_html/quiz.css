@@ -134,7 +134,9 @@ span{
 }
 
 .quiz_title_date{
-  
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
 }
     
 
